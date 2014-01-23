@@ -68,6 +68,11 @@ struct sockaddr_storage{
 /*Default Permissions for new directory*/
 #define DIR_MODE (FILE_MODE | S_IXUSR | S_IXGRP | S_IXOTH)
 
+/*Prototypes for our own library functions*/
+char *sock_ntop(const SA*,socklen_t);
+char *sock_ntop_host(const SA*,socklen_t);
+
+
 /*Error Functions*/
 void err_dump(const char *,...);
 void err_msg(const char *,...);
