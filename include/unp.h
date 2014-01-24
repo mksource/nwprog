@@ -72,6 +72,19 @@ struct sockaddr_storage{
 char *sock_ntop(const SA*,socklen_t);
 char *sock_ntop_host(const SA*,socklen_t);
 
+int sock_bind_wild(int,int);
+int sock_cmp_addr(const struct sockaddr *,const struct sockaddr *,socklen_t);
+int sock_cmp_port(const struct sockaddr *,const struct sockaddr *,socklen_t);
+int sock_get_port(const struct sockaddr *,socklen_t);
+void sock_set_addr(struct sockaddr *,socklen_t,void *);
+void sock_set_port(struct sockaddr *,socklen_t,int);
+void soc_set_wild(struct sockaddr *,socklen_t);
+
+
+ssize_t readn(int,void *,size_t);
+ssize_t readline(int,void *,size_t);
+ssize_t writen(int,const void*,size_t);
+
 
 /*Error Functions*/
 void err_dump(const char *,...);
@@ -96,7 +109,10 @@ void   Listen(int,int);
 ssize_t Readline(int,void *,size_t);
 ssize_t Readn(int,void *,size_t);
 int    Socket(int,int,int);
-
+int    Socket_bind_wild(int,int);
+char   *Sock_ntop(const SA *,socklen_t);
+char   *Sock_ntop_host(const SA *,socklen_t);
+void   Writen(int,void *,size_t);
 
 
 

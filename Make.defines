@@ -1,0 +1,12 @@
+#
+#Make Definitions
+#
+#
+CC=gcc
+CFLAGS=-I../include -g -Wall
+LIBS= ../libunp.a -lpthread
+LIBUNP_NAME=../libunp.a
+
+LIB_OBJS=error.o sock_cmp_addr.o sock_ntop_host.o sock_cmp_port.o sock_set_addr.o wrapsock.o sock_get_port.o sock_set_port.o wrapunix.o sock_bind_wild.o sock_ntop.o sock_set_wild.o writen.o readline.o readn.o 
+
+CLEANFILES= core core.* *core *.o temp.* *.out 
